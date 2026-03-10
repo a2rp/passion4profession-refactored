@@ -2,7 +2,15 @@
 import styled from "styled-components";
 
 export const Styled = {
-    Wrapper: styled.footer`
+    Wrapper: styled.div`
+        .info {
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+    `,
+    Main: styled.footer`
         display: flex;
         align-items: center;
         justify-content: space-between;

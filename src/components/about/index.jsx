@@ -67,6 +67,11 @@ const About = () => {
 
                     <ShareButtons />
 
+                    <p>
+                        <br />
+                        Originally written between 2012 and 2014 during my early
+                        exploration of computing concepts.
+                    </p>
                     <div className="metaRow">
                         <div className="metaCard">
                             <span className="metaIcon">

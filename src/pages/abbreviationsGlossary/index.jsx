@@ -81,6 +81,11 @@ const notes = [
 ];
 
 const AbbreviationsGlossary = () => {
+    useEffect(() => {
+        document.title =
+            "List of short forms and full forms of common abbreviations";
+    }, []);
+
     return (
         <Styled.Wrapper className="topicWrapper">
             <Styled.HeroCard>
