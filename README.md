@@ -1,154 +1,61 @@
 # Passion4Profession Refactored
 
-![alt text](image.png)
+A React and Vite archive that preserves and reorganizes beginner-friendly computing notes from the original Passion4Profession blog.
 
-A refactored and expanded version of the original Passion4Profession blog where I used to write about computer concepts during my college days.
+![Passion4Profession Refactored preview](screenshot.png)
 
-The goal of this project is to preserve those early ideas and rewrite them in a clearer, more structured, and modern format.
+## Features
 
-This repository contains beginner friendly explanations of fundamental computing concepts including hardware, software, networking, storage, programming, and core computer science topics.
+- Searchable archive navigation for computing topics
+- Lazy-loaded pages for a focused reading experience
+- Responsive sidebar with active topic scrolling
+- Dark and light themes saved in local storage
+- Topic pages for hardware, software, networking, storage, programming, and reference material
+- Icon-only social and support links with a floating scroll-to-top control
 
-The content is rewritten, expanded, and organized to make it easier for learners to understand the foundations of computing.
-
-## Live Website
-
-https://a2rp.github.io/passion4profession-refactored/
-
-## About This Project
-
-The original blog was created during my college days:
-
-https://passion4profession.blogspot.com/
-
-I don't do anything there anymore. So, any links given there are of no use.
-
-Many posts were short notes explaining basic concepts like bits, bytes, storage units, hardware interfaces, and other computing fundamentals.
-
-In this repository those ideas are:
-
-- rewritten with clearer explanations
-- expanded with examples
-- organized into structured topics
-- corrected and updated where necessary
-- presented through a modern React based interface
-
-## Project Goals
-
-- Preserve the original ideas from the early blog
-- Improve clarity and accuracy of explanations
-- Organize topics in a logical learning structure
-- Build a clean technical knowledge reference
-- Make concepts beginner friendly
-
-## Topics Covered
-
-Some of the topics included in this project:
-
-- Bits and Bytes
-- Storage Units (KB MB GB TB)
-- Computer Hardware Basics
-- Storage Devices and Interfaces
-- Platform Independence
-- Memory vs Storage
-- Operating System Basics
-- Networking Fundamentals
-- Web and Programming Foundations
-
-More topics will be added and improved over time.
-
-## Tech Stack
-
-This project is built using:
+## Tech stack
 
 - React
 - Vite
+- React Router
 - styled-components
+- Material UI
 - react-icons
 
----
+## Run locally
 
-Each topic is written as a separate component and structured to make concepts easy to explore.
-
----
-
-## Running Locally
-
-- Clone the repository:
-
-```bash
-git clone https://github.com/a2rp/passion4profession-refactored.git
-```
-
-- Move into the project directory:
-
-```bash
-cd passion4profession-refactored
-```
-
-- Install dependencies:
-
-```bash
+\`\`\`bash
 npm install
-
-# Start the development server:
 npm run dev
+\`\`\`
 
-## Build
+Build and deploy:
 
-# To create a production build:
-
+\`\`\`bash
 npm run build
-```
+npm run deploy
+\`\`\`
 
-## Deployment
+## Live website
 
----
+[Open Passion4Profession Refactored](https://a2rp.github.io/passion4profession-refactored/)
 
-This project is deployed using GitHub Pages.
+## Future scope
 
-## Follow Me
-
-- GitHub https://github.com/a2rp
-- Portfolio https://www.ashishranjan.net
-- LinkedIn https://www.linkedin.com/in/aashishranjan
-- Facebook https://www.facebook.com/theash.ashish/
-- Youtube https://www.youtube.com/@ashishranjan-ashz
-
----
-
-a2rp: an Ashish Ranjan presentation
+The archive can grow with improved search, topic grouping, reading progress, and more carefully expanded reference pages.
 
 ## Links
 
-- Portfolio: [https://www.ashishranjan.net](https://www.ashishranjan.net)
-- GitHub: [https://github.com/a2rp](https://github.com/a2rp)
-- CodePen: [https://codepen.io/ash1198](https://codepen.io/ash1198)
-- LinkedIn: [https://www.linkedin.com/in/aashishranjan](https://www.linkedin.com/in/aashishranjan)
-- Facebook: [https://www.facebook.com/theash.ashish/](https://www.facebook.com/theash.ashish/)
-- YouTube: [https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1](https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1)
+- Portfolio: [ashishranjan.net](https://www.ashishranjan.net/)
+- GitHub: [github.com/a2rp](https://github.com/a2rp)
+- CodePen: [codepen.io/ash1198](https://codepen.io/ash1198)
+- LinkedIn: [linkedin.com/in/aashishranjan](https://www.linkedin.com/in/aashishranjan)
+- Facebook: [facebook.com/theash.ashish](https://www.facebook.com/theash.ashish/)
+- YouTube: [youtube.com/@ashishranjan-ashz](https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1)
 - Email: [ash.ranjan09@gmail.com](mailto:ash.ranjan09@gmail.com)
 
 ## Support
 
-- Support: [https://a2rp-donation-page.netlify.app/](https://a2rp-donation-page.netlify.app/)
-- Buy Me A Coffee: [https://buymeacoffee.com/a2rp](https://buymeacoffee.com/a2rp)
-- Patreon: [https://patreon.com/a2rp](https://patreon.com/a2rp)
-<!-- Project links -->
-
-## Links
-
-- Live: [https://a2rp.github.io/passion4profession-refactored/](https://a2rp.github.io/passion4profession-refactored/)
-- Repository: [https://github.com/a2rp/passion4profession-refactored](https://github.com/a2rp/passion4profession-refactored)
-- Portfolio: [https://www.ashishranjan.net/](https://www.ashishranjan.net/)
-- GitHub: [https://github.com/a2rp](https://github.com/a2rp)
-- CodePen: [https://codepen.io/ash1198](https://codepen.io/ash1198)
-- LinkedIn: [https://www.linkedin.com/in/aashishranjan](https://www.linkedin.com/in/aashishranjan)
-- Facebook: [https://www.facebook.com/theash.ashish/](https://www.facebook.com/theash.ashish/)
-- YouTube: [https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1](https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1)
-- Email: [ash.ranjan09@gmail.com](mailto:ash.ranjan09@gmail.com)
-
-## Support
-
-- Support: [https://a2rp-donation-page.netlify.app/](https://a2rp-donation-page.netlify.app/)
-- Buy Me a Coffee: [https://buymeacoffee.com/a2rp](https://buymeacoffee.com/a2rp)
-- Patreon: [https://www.patreon.com/a2rp](https://www.patreon.com/a2rp)
+- Support: [a2rp-donation-page.netlify.app](https://a2rp-donation-page.netlify.app/)
+- Buy Me a Coffee: [buymeacoffee.com/a2rp](https://buymeacoffee.com/a2rp)
+- Patreon: [patreon.com/a2rp](https://www.patreon.com/a2rp)

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     FiHash,
     FiTerminal,
@@ -332,8 +332,6 @@ const asciiTable = [
 ];
 
 const AsciiControlSymbols = () => {
-    const [chartLoaded, setChartLoaded] = useState(false);
-
     return (
         <Styled.Wrapper className="topicWrapper">
             <Styled.HeroCard>

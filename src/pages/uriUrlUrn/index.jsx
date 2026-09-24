@@ -225,7 +225,7 @@ const UriUrlUrn = () => {
                 <div className="compareGrid">
                     <div className="compareCard">
                         <h3>URL example</h3>
-                        <p className="mono">https://openai.com/research</p>
+                        <p className="mono">https://example.com/research</p>
                         <p>
                             This tells you where the resource can be found and
                             how it can be accessed through HTTPS.
