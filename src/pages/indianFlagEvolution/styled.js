@@ -216,7 +216,7 @@ export const Styled = {
         }
 
         .stripe.saffron {
-            background: #ff9933;
+            background: #b2b2b2;
         }
 
         .stripe.white {
@@ -227,14 +227,14 @@ export const Styled = {
         }
 
         .stripe.green {
-            background: #138808;
+            background: #757575;
         }
 
         .chakra {
             width: 44px;
             height: 44px;
             border-radius: 999px;
-            border: 3px solid #000080;
+            border: 3px solid #212121;
             position: relative;
         }
 
@@ -243,7 +243,7 @@ export const Styled = {
             content: "";
             position: absolute;
             inset: 50%;
-            background: #000080;
+            background: #212121;
             transform: translate(-50%, -50%);
         }
 

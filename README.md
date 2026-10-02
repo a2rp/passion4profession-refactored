@@ -2,7 +2,7 @@
 
 A React and Vite archive that preserves and reorganizes beginner-friendly computing notes from the original Passion4Profession blog.
 
-![Passion4Profession Refactored preview](screenshot.png)
+![Passion4Profession Refactored screenshot](./screenshot.jpg)
 
 ## Features
 

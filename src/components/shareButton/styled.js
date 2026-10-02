@@ -24,14 +24,14 @@ export const Styled = {
         justify-content: center;
         gap: 8px;
         border-radius: var(--radius-sm);
-        border: 1px solid #115e59;
-        background: #0f766e;
+        border: 1px solid #545454;
+        background: #696969;
         color: #ffffff;
         font-size: 14px;
         font-weight: 800;
         line-height: 1;
         cursor: pointer;
-        box-shadow: 0 10px 24px rgba(15, 118, 110, 0.22);
+        box-shadow: 0 10px 24px rgba(105, 105, 105, 0.22);
         transition:
             background var(--transition-fast),
             border-color var(--transition-fast),
@@ -43,14 +43,14 @@ export const Styled = {
             width: 16px;
             height: 16px;
             flex-shrink: 0;
-            color: #99f6e4;
+            color: #e5e5e5;
         }
 
         &:hover {
-            background: #14b8a6;
-            border-color: #0f766e;
+            background: #a4a4a4;
+            border-color: #696969;
             transform: translateY(-1px);
-            box-shadow: 0 14px 30px rgba(20, 184, 166, 0.24);
+            box-shadow: 0 14px 30px rgba(164, 164, 164, 0.24);
         }
 
         &:active {
@@ -58,7 +58,7 @@ export const Styled = {
         }
 
         &:focus-visible {
-            outline: 2px solid #5eead4;
+            outline: 2px solid #d4d4d4;
             outline-offset: 3px;
         }
     `,
@@ -128,7 +128,7 @@ export const Styled = {
         svg {
             width: 15px;
             height: 15px;
-            color: #14b8a6;
+            color: #a4a4a4;
             flex-shrink: 0;
         }
 
