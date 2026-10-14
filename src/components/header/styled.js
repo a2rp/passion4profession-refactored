@@ -172,47 +172,79 @@ export const Styled = {
         }
 
         .themeToggleBtn {
+            position: relative;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 9px 12px;
-            border-radius: var(--radius-sm);
+            justify-content: space-between;
+            width: 64px;
+            height: 36px;
+            padding: 0;
+            flex-shrink: 0;
+            border-radius: 999px;
             border: 1px solid var(--color-border);
             background: var(--color-surface-2);
             color: var(--color-text-primary);
+            cursor: pointer;
             transition:
                 background var(--transition-fast),
                 border-color var(--transition-fast),
-                color var(--transition-fast),
-                transform var(--transition-fast);
+                color var(--transition-fast);
 
-            .icon {
-                font-size: 18px;
-                color: var(--color-primary);
+            .trackIcon {
+                position: absolute;
+                top: 50%;
+                z-index: 1;
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
+                width: 14px;
+                height: 14px;
+                transform: translateY(-50%);
+                color: var(--color-text-muted);
+                font-size: 13px;
+                pointer-events: none;
             }
 
-            .label {
-                font-size: 13px;
-                font-weight: 700;
-                color: var(--color-text-secondary);
+            .darkIcon {
+                left: 8px;
+            }
+
+            .lightIcon {
+                right: 8px;
+            }
+
+            .thumb {
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                z-index: 2;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                background: var(--color-text-primary);
+                color: var(--color-text-inverse);
+                font-size: 14px;
+                box-shadow: 0 1px 4px var(--color-shadow);
+                transition:
+                    transform var(--transition-normal),
+                    background var(--transition-fast),
+                    color var(--transition-fast);
+            }
+
+            &.light .thumb {
+                transform: translateX(28px);
             }
 
             &:hover {
-                background: var(--color-surface-3);
                 border-color: var(--color-border-light);
+                background: var(--color-surface-3);
             }
 
-            &:active {
-                transform: translateY(1px);
-            }
-
-            @media (width < 420px) {
-                .label {
-                    display: none;
-                }
+            &:active .thumb {
+                box-shadow: 0 0 0 3px var(--color-selection-bg);
             }
         }
     `,

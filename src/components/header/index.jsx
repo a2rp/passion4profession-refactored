@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Styled } from "./styled";
 import blackBgLogo from "/logo.png";
-import { FiMoon, FiSun, FiBookOpen, FiArchive, FiLayers } from "react-icons/fi";
+import { FiMoon, FiSun } from "react-icons/fi";
 import { IoIosMenu } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
@@ -27,9 +27,7 @@ const Header = ({ handleSliderToggleClick }) => {
         localStorage.setItem(THEME_LS_KEY, theme);
     }, [theme]);
 
-    const nextTheme = useMemo(() => {
-        return theme === "light" ? "dark" : "light";
-    }, [theme]);
+    const nextTheme = theme === "light" ? "dark" : "light";
 
     const handleToggle = () => {
         setTheme(nextTheme);
@@ -79,17 +77,29 @@ const Header = ({ handleSliderToggleClick }) => {
                 <div className="rightSide">
                     <button
                         type="button"
-                        className="themeToggleBtn"
+                        role="switch"
+                        aria-checked={theme === "light"}
+                        aria-label="Light theme"
+                        className={`themeToggleBtn ${
+                            theme === "light" ? "light" : ""
+                        }`}
                         onClick={handleToggle}
-                        aria-label={`Switch to ${nextTheme} theme`}
                         title={`Switch to ${nextTheme} theme`}
                     >
-                        <span className="icon">
-                            {theme === "light" ? <FiMoon /> : <FiSun />}
+                        <span
+                            className="trackIcon darkIcon"
+                            aria-hidden="true"
+                        >
+                            <FiMoon />
                         </span>
-
-                        <span className="label">
-                            {theme === "light" ? "Light" : "Dark"}
+                        <span
+                            className="trackIcon lightIcon"
+                            aria-hidden="true"
+                        >
+                            <FiSun />
+                        </span>
+                        <span className="thumb" aria-hidden="true">
+                            {theme === "light" ? <FiSun /> : <FiMoon />}
                         </span>
                     </button>
                 </div>
