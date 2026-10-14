@@ -1,6 +1,12 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { FiArrowLeft, FiArrowRight, FiArrowUpRight, FiSearch } from "react-icons/fi";
+import {
+    FiArrowLeft,
+    FiArrowRight,
+    FiArrowUpRight,
+    FiChevronDown,
+    FiSearch,
+} from "react-icons/fi";
 import { archivePosts } from "../../lib/archivePosts";
 import { Styled } from "./styled";
 
@@ -137,36 +143,42 @@ const Home = () => {
 
                 <label className="selectField">
                     <span>Topic</span>
-                    <select
-                        value={category}
-                        onChange={(event) => {
-                            setCategory(event.target.value);
-                            setPage(1);
-                        }}
-                        aria-label="Filter by topic"
-                    >
-                        {categories.map((item) => (
-                            <option key={item} value={item}>
-                                {item}
-                            </option>
-                        ))}
-                    </select>
+                    <div className="selectControl">
+                        <select
+                            value={category}
+                            onChange={(event) => {
+                                setCategory(event.target.value);
+                                setPage(1);
+                            }}
+                            aria-label="Filter by topic"
+                        >
+                            {categories.map((item) => (
+                                <option key={item} value={item}>
+                                    {item}
+                                </option>
+                            ))}
+                        </select>
+                        <FiChevronDown className="selectChevron" aria-hidden="true" />
+                    </div>
                 </label>
 
                 <label className="selectField sortField">
                     <span>Sort</span>
-                    <select
-                        value={sort}
-                        onChange={(event) => {
-                            setSort(event.target.value);
-                            setPage(1);
-                        }}
-                        aria-label="Sort articles"
-                    >
-                        <option value="archive">Archive order</option>
-                        <option value="title-asc">Title: A to Z</option>
-                        <option value="title-desc">Title: Z to A</option>
-                    </select>
+                    <div className="selectControl">
+                        <select
+                            value={sort}
+                            onChange={(event) => {
+                                setSort(event.target.value);
+                                setPage(1);
+                            }}
+                            aria-label="Sort articles"
+                        >
+                            <option value="archive">Archive order</option>
+                            <option value="title-asc">Title: A to Z</option>
+                            <option value="title-desc">Title: Z to A</option>
+                        </select>
+                        <FiChevronDown className="selectChevron" aria-hidden="true" />
+                    </div>
                 </label>
             </section>
 

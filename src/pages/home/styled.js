@@ -132,10 +132,29 @@ export const Styled = {
             flex-shrink: 0;
         }
 
+        .selectControl {
+            position: relative;
+            flex: 1;
+            min-width: 0;
+        }
+
         .selectField select {
             padding: 0 12px;
             font-size: 13px;
             cursor: pointer;
+            appearance: none;
+            padding-right: 36px;
+        }
+
+        .selectChevron {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            width: 15px;
+            height: 15px;
+            color: var(--color-text-muted);
+            pointer-events: none;
+            transform: translateY(-50%);
         }
 
         .resultsHeader {
