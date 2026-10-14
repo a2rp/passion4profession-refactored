@@ -270,7 +270,7 @@ const archiveRoutes = [
     },
 ];
 
-const BlogArchiveNav = () => {
+const BlogArchiveNav = ({ onNavigate }) => {
     const location = useLocation();
     const activeItemRef = useRef(null);
     const listRef = useRef(null);
@@ -378,6 +378,7 @@ const BlogArchiveNav = () => {
                                         `navLink ${navIsActive ? "active" : ""}`
                                     }
                                     ref={isActive ? activeItemRef : null}
+                                    onClick={onNavigate}
                                 >
                                     <span className="initialBadge">
                                         {firstLetter}

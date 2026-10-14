@@ -12,10 +12,34 @@ const App = () => {
     const scrollerRef = useRef(null);
 
     const [displaySlider, setDisplaySlider] = useState(true);
+    const [displayRightSlider, setDisplayRightSlider] = useState(false);
 
     const handleSliderToggleClick = () => {
         setDisplaySlider((prev) => !prev);
     };
+
+    const handleRightSliderToggleClick = () => {
+        setDisplayRightSlider((prev) => !prev);
+    };
+
+    const closeRightSlider = () => {
+        setDisplayRightSlider(false);
+    };
+
+    useEffect(() => {
+        if (!displayRightSlider) {
+            return;
+        }
+
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                setDisplayRightSlider(false);
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [displayRightSlider]);
 
     useEffect(() => {
         if (!scrollerRef.current) {
@@ -31,7 +55,11 @@ const App = () => {
     return (
         <Styled.Wrapper>
             <Styled.Header>
-                <Header handleSliderToggleClick={handleSliderToggleClick} />
+                <Header
+                    handleSliderToggleClick={handleSliderToggleClick}
+                    handleRightSliderToggleClick={handleRightSliderToggleClick}
+                    displayRightSlider={displayRightSlider}
+                />
             </Styled.Header>
 
             <Styled.Main>
@@ -54,6 +82,27 @@ const App = () => {
                         <GoToTop scrollerRef={scrollerRef} />
                     </div>
                 </div>
+
+                <button
+                    type="button"
+                    className={`rightMenuBackdrop ${
+                        displayRightSlider ? "visible" : ""
+                    }`}
+                    onClick={closeRightSlider}
+                    aria-label="Close archive menu"
+                    tabIndex={displayRightSlider ? 0 : -1}
+                />
+
+                <aside
+                    id="rightArchiveMenu"
+                    className={`rightMenuSlider ${
+                        displayRightSlider ? "open" : ""
+                    }`}
+                    aria-label="Archive menu"
+                    aria-hidden={!displayRightSlider}
+                >
+                    <BlogArchiveNav onNavigate={closeRightSlider} />
+                </aside>
             </Styled.Main>
         </Styled.Wrapper>
     );

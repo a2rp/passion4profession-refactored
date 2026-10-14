@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Styled } from "./styled";
 import blackBgLogo from "/logo.png";
-import { FiMoon, FiSun } from "react-icons/fi";
+import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 import { IoIosMenu } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
 const THEME_LS_KEY = "passion4profession-refactored-theme";
 
-const Header = ({ handleSliderToggleClick }) => {
+const Header = ({
+    handleSliderToggleClick,
+    handleRightSliderToggleClick,
+    displayRightSlider,
+}) => {
     const [logoLoaded, setLogoLoaded] = useState(false);
     const [theme, setTheme] = useState(() => {
         if (typeof window === "undefined") {
@@ -101,6 +105,26 @@ const Header = ({ handleSliderToggleClick }) => {
                         <span className="thumb" aria-hidden="true">
                             {theme === "light" ? <FiSun /> : <FiMoon />}
                         </span>
+                    </button>
+
+                    <button
+                        type="button"
+                        className="archiveMenuToggle"
+                        onClick={handleRightSliderToggleClick}
+                        aria-label={
+                            displayRightSlider
+                                ? "Close archive menu"
+                                : "Open archive menu"
+                        }
+                        aria-expanded={displayRightSlider}
+                        aria-controls="rightArchiveMenu"
+                        title={
+                            displayRightSlider
+                                ? "Close archive menu"
+                                : "Open archive menu"
+                        }
+                    >
+                        {displayRightSlider ? <FiX /> : <FiMenu />}
                     </button>
                 </div>
             </Styled.Main>

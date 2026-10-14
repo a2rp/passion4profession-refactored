@@ -247,5 +247,34 @@ export const Styled = {
                 box-shadow: 0 0 0 3px var(--color-selection-bg);
             }
         }
+
+        .archiveMenuToggle {
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--color-border);
+            background: var(--color-surface-2);
+            color: var(--color-text-primary);
+            font-size: 22px;
+            cursor: pointer;
+            transition:
+                background var(--transition-fast),
+                border-color var(--transition-fast),
+                color var(--transition-fast),
+                transform var(--transition-fast);
+
+            &:hover {
+                background: var(--color-surface-3);
+                border-color: var(--color-border-light);
+            }
+
+            &:active {
+                transform: translateY(1px);
+            }
+        }
     `,
 };
