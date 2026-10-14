@@ -118,20 +118,6 @@ export const Styled = {
             border-color: var(--color-primary);
         }
 
-        .clearSearch {
-            position: absolute;
-            right: 9px;
-            width: 30px;
-            height: 30px;
-            display: grid;
-            place-items: center;
-            border: 0;
-            border-radius: 50%;
-            background: transparent;
-            color: var(--color-text-muted);
-            cursor: pointer;
-        }
-
         .selectField {
             display: flex;
             align-items: center;

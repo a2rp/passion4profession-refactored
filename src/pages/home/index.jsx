@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { FiArrowLeft, FiArrowRight, FiArrowUpRight, FiSearch, FiX } from "react-icons/fi";
+import { FiArrowLeft, FiArrowRight, FiArrowUpRight, FiSearch } from "react-icons/fi";
 import { archivePosts } from "../../lib/archivePosts";
 import { Styled } from "./styled";
 
@@ -133,19 +133,6 @@ const Home = () => {
                         placeholder="Search articles..."
                         aria-label="Search articles"
                     />
-                    {search ? (
-                        <button
-                            type="button"
-                            className="clearSearch"
-                            aria-label="Clear search"
-                            onClick={() => {
-                                setSearch("");
-                                setPage(1);
-                            }}
-                        >
-                            <FiX />
-                        </button>
-                    ) : null}
                 </label>
 
                 <label className="selectField">
