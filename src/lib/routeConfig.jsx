@@ -1,6 +1,7 @@
 import React, { lazy } from "react";
 
 const About = lazy(() => import("../components/about"));
+const Home = lazy(() => import("../pages/home"));
 const NotFound = lazy(() => import("../pages/notFound"));
 
 const PlatformIndependence = lazy(
@@ -382,10 +383,14 @@ export const routeConfig = [
     },
     {
         path: "/",
-        element: <About />,
+        element: <Home />,
     },
     {
         path: "/home",
+        element: <Home />,
+    },
+    {
+        path: "/about",
         element: <About />,
     },
 ];

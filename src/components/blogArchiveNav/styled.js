@@ -16,6 +16,40 @@ export const Styled = {
         display: flex;
         flex-direction: column;
 
+        .pageLinks {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .pageLink {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 40px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            background: var(--color-surface-2);
+            color: var(--color-text-secondary);
+            font-size: 13px;
+            font-weight: 750;
+            text-decoration: none;
+            transition:
+                background var(--transition-fast),
+                color var(--transition-fast),
+                border-color var(--transition-fast);
+        }
+
+        .pageLink:hover,
+        .pageLink.active {
+            border-color: var(--color-border-light);
+            background: var(--color-surface-3);
+            color: var(--color-text-primary);
+        }
+
         .searchBox {
             position: relative;
             padding: 14px 18px;
