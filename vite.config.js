@@ -2,7 +2,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-    base: "/passion4profession-refactored/",
+    // Serve assets from the domain root (Vercel deployment).
+    base: "/",
     plugins: [react()],
 
     define: {

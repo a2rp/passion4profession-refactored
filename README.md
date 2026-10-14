@@ -29,16 +29,17 @@ npm install
 npm run dev
 \`\`\`
 
-Build and deploy:
+Build locally:
 
 \`\`\`bash
 npm run build
-npm run deploy
 \`\`\`
 
 ## Live website
 
-[Open Passion4Profession Refactored](https://a2rp.github.io/passion4profession-refactored/)
+[Open Passion4Profession Refactored](https://passion4profession-refactored.vercel.app/)
+
+Production deployments are published by Vercel when changes are pushed to the connected Git branch.
 
 ## Future scope
 
