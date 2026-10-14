@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Box, CircularProgress, Typography } from "@mui/material";
 import { routeConfig, fallbackRoute } from "./lib/routeConfig";
+import BlogHeroImage from "./components/blogHeroImage";
 
 const PageLoader = () => {
     return (
@@ -23,24 +24,34 @@ const PageLoader = () => {
 
 const AppRoutes = () => {
     const location = useLocation();
+    const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
+    const archiveRoute = routeConfig.find(
+        (route) =>
+            route.path === normalizedPath && route.path.startsWith("/archive/"),
+    );
+    const heroSlug = archiveRoute?.path.slice("/archive/".length);
 
     return (
-        <Suspense key={location.pathname} fallback={<PageLoader />}>
-            <Routes>
-                {routeConfig.map((route) => (
-                    <Route
-                        key={route.path}
-                        path={route.path}
-                        element={route.element}
-                    />
-                ))}
+        <>
+            {heroSlug ? <BlogHeroImage slug={heroSlug} /> : null}
 
-                <Route
-                    path={fallbackRoute.path}
-                    element={fallbackRoute.element}
-                />
-            </Routes>
-        </Suspense>
+            <Suspense key={location.pathname} fallback={<PageLoader />}>
+                <Routes>
+                    {routeConfig.map((route) => (
+                        <Route
+                            key={route.path}
+                            path={route.path}
+                            element={route.element}
+                        />
+                    ))}
+
+                    <Route
+                        path={fallbackRoute.path}
+                        element={fallbackRoute.element}
+                    />
+                </Routes>
+            </Suspense>
+        </>
     );
 };
 
