@@ -42,7 +42,7 @@ const Header = ({ handleRightSliderToggleClick, displayRightSlider }) => {
 
                             <img
                                 src={blackBgLogo}
-                                alt="passion4profession refactored"
+                                alt="Passion4Profession Refactored"
                                 onLoad={() => setLogoLoaded(true)}
                                 style={{ opacity: logoLoaded ? 1 : 0 }}
                                 loading="lazy"
@@ -50,7 +50,7 @@ const Header = ({ handleRightSliderToggleClick, displayRightSlider }) => {
                         </div>
 
                         <div className="nameWrapper">
-                            <div className="title">Passion4Profession</div>
+                            <div className="title">Passion4Profession Refactored</div>
 
                             <div className="subTitle">
                                 refactored computing notes archive

@@ -117,12 +117,6 @@ export const Styled = {
                 }
 
                 @media (width < 720px) {
-                    .subTitle {
-                        display: none;
-                    }
-                }
-
-                @media (width < 420px) {
                     display: none;
                 }
             }

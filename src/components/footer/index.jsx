@@ -94,7 +94,9 @@ const Footer = () => (
                 </a>
             </div>
 
-            <div className="archiveName">Passion4Profession Archive</div>
+            <div className="archiveName">
+                Passion4Profession Refactored Archive
+            </div>
 
             <div className="linkSets">
                 <FooterLinkSet links={archiveLinks} />
