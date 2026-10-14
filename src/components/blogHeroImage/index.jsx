@@ -5,7 +5,7 @@ const BlogHeroImage = ({ slug }) => {
     return (
         <Styled.Figure>
             <img
-                src={`/images/blog-hero/${slug}.svg`}
+                src={`/images/blog-hero/${slug}.jpg`}
                 alt=""
                 aria-hidden="true"
                 fetchPriority="high"
