@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { Box, CircularProgress, Typography } from "@mui/material";
 import { routeConfig, fallbackRoute } from "./lib/routeConfig";
 import BlogHeroImage from "./components/blogHeroImage";
+import BlogPostNavigation from "./components/blogPostNavigation";
 
 const PageLoader = () => {
     return (
@@ -33,7 +34,12 @@ const AppRoutes = () => {
 
     return (
         <>
-            {heroSlug ? <BlogHeroImage slug={heroSlug} /> : null}
+            {heroSlug ? (
+                <>
+                    <BlogHeroImage slug={heroSlug} />
+                    <BlogPostNavigation slug={heroSlug} placement="top" />
+                </>
+            ) : null}
 
             <Suspense key={location.pathname} fallback={<PageLoader />}>
                 <Routes>
@@ -51,6 +57,10 @@ const AppRoutes = () => {
                     />
                 </Routes>
             </Suspense>
+
+            {heroSlug ? (
+                <BlogPostNavigation slug={heroSlug} placement="bottom" />
+            ) : null}
         </>
     );
 };
