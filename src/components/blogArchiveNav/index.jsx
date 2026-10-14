@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { FiArchive, FiSearch, FiX } from "react-icons/fi";
+import { FiSearch, FiX } from "react-icons/fi";
 import { Styled } from "./styled";
 
 const archiveRoutes = [
@@ -326,20 +326,6 @@ const BlogArchiveNav = ({ onNavigate }) => {
 
     return (
         <Styled.Wrapper>
-            <div className="headerBlock">
-                <div className="headerIcon">
-                    <FiArchive />
-                </div>
-
-                <div className="headerContent">
-                    <h2>Blog Archive</h2>
-                    <p>
-                        Internal routes for the refactored Passion4Profession
-                        archive.
-                    </p>
-                </div>
-            </div>
-
             <div className="searchBox">
                 <FiSearch className="searchIcon" />
 
