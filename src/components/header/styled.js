@@ -51,42 +51,6 @@ export const Styled = {
             flex: 1;
         }
 
-        .toggleButtonLogoNameWrapper {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            min-width: 0;
-            width: 100%;
-        }
-
-        .toggleButton {
-            width: 42px;
-            height: 42px;
-            flex-shrink: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--color-border);
-            background: var(--color-surface-2);
-            color: var(--color-text-primary);
-            cursor: pointer;
-            transition:
-                background var(--transition-fast),
-                border-color var(--transition-fast),
-                color var(--transition-fast),
-                transform var(--transition-fast);
-        }
-
-        .toggleButton:hover {
-            background: var(--color-surface-3);
-            border-color: var(--color-border-light);
-        }
-
-        .toggleButton:active {
-            transform: translateY(1px);
-        }
-
         .logoNameWrapper {
             display: flex;
             align-items: center;

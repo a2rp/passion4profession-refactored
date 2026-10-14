@@ -11,12 +11,7 @@ const App = () => {
     const location = useLocation();
     const scrollerRef = useRef(null);
 
-    const [displaySlider, setDisplaySlider] = useState(true);
     const [displayRightSlider, setDisplayRightSlider] = useState(false);
-
-    const handleSliderToggleClick = () => {
-        setDisplaySlider((prev) => !prev);
-    };
 
     const handleRightSliderToggleClick = () => {
         setDisplayRightSlider((prev) => !prev);
@@ -56,19 +51,12 @@ const App = () => {
         <Styled.Wrapper>
             <Styled.Header>
                 <Header
-                    handleSliderToggleClick={handleSliderToggleClick}
                     handleRightSliderToggleClick={handleRightSliderToggleClick}
                     displayRightSlider={displayRightSlider}
                 />
             </Styled.Header>
 
             <Styled.Main>
-                <div
-                    className={`menuSlider ${displaySlider ? "" : "hideMenuSlider"}`}
-                >
-                    <BlogArchiveNav />
-                </div>
-
                 <div className="contentWrapper">
                     <div className="contentInnerWrapper" ref={scrollerRef}>
                         <div className="routesWrapper">

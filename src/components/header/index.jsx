@@ -2,16 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Styled } from "./styled";
 import blackBgLogo from "/logo.png";
 import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
-import { IoIosMenu } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
 const THEME_LS_KEY = "passion4profession-refactored-theme";
 
-const Header = ({
-    handleSliderToggleClick,
-    handleRightSliderToggleClick,
-    displayRightSlider,
-}) => {
+const Header = ({ handleRightSliderToggleClick, displayRightSlider }) => {
     const [logoLoaded, setLogoLoaded] = useState(false);
     const [theme, setTheme] = useState(() => {
         if (typeof window === "undefined") {
@@ -41,41 +36,27 @@ const Header = ({
         <Styled.Wrapper>
             <Styled.Main>
                 <div className="leftSide">
-                    <div className="toggleButtonLogoNameWrapper">
-                        <button
-                            type="button"
-                            className="toggleButton"
-                            onClick={handleSliderToggleClick}
-                            aria-label="Toggle topics sidebar"
-                            title="Toggle topics sidebar"
-                        >
-                            <IoIosMenu size={32} />
-                        </button>
+                    <NavLink className="logoNameWrapper" to="/">
+                        <div className="logoWrapper">
+                            {!logoLoaded && <div className="logoSkeleton" />}
 
-                        <NavLink className="logoNameWrapper" to="/">
-                            <div className="logoWrapper">
-                                {!logoLoaded && (
-                                    <div className="logoSkeleton" />
-                                )}
+                            <img
+                                src={blackBgLogo}
+                                alt="passion4profession refactored"
+                                onLoad={() => setLogoLoaded(true)}
+                                style={{ opacity: logoLoaded ? 1 : 0 }}
+                                loading="lazy"
+                            />
+                        </div>
 
-                                <img
-                                    src={blackBgLogo}
-                                    alt="passion4profession refactored"
-                                    onLoad={() => setLogoLoaded(true)}
-                                    style={{ opacity: logoLoaded ? 1 : 0 }}
-                                    loading="lazy"
-                                />
+                        <div className="nameWrapper">
+                            <div className="title">Passion4Profession</div>
+
+                            <div className="subTitle">
+                                refactored computing notes archive
                             </div>
-
-                            <div className="nameWrapper">
-                                <div className="title">Passion4Profession</div>
-
-                                <div className="subTitle">
-                                    refactored computing notes archive
-                                </div>
-                            </div>
-                        </NavLink>
-                    </div>
+                        </div>
+                    </NavLink>
                 </div>
 
                 <div className="rightSide">
