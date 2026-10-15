@@ -1,4 +1,5 @@
 import React from "react";
+import ImageWithLoader from "../../components/imageWithLoader";
 import {
     FiCode,
     FiClock,
@@ -123,7 +124,7 @@ const ProgrammingLanguages = () => {
             </Styled.HeroCard>
 
             <Styled.SectionCard>
-                <img src={image} alt="" />
+                <ImageWithLoader src={image} alt="" />
             </Styled.SectionCard>
 
             <Styled.SectionCard>

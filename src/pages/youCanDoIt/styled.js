@@ -120,17 +120,28 @@ export const Styled = {
             box-shadow: 0 14px 36px var(--color-shadow);
         }
 
-        .posterSkeleton {
+        .posterLoader {
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                90deg,
-                var(--color-surface-2),
-                var(--color-border),
-                var(--color-surface-2)
-            );
-            opacity: 0.6;
-            min-height: 420px;
+            z-index: 1;
+            display: grid;
+            place-items: center;
+            background: var(--color-surface-2);
+
+            span {
+                width: 32px;
+                height: 32px;
+                border: 3px solid var(--color-border);
+                border-top-color: var(--color-primary);
+                border-radius: 50%;
+                animation: poster-spin 750ms linear infinite;
+            }
+        }
+
+        @keyframes poster-spin {
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         img {

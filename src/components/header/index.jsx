@@ -38,7 +38,15 @@ const Header = ({ handleRightSliderToggleClick, displayRightSlider }) => {
                 <div className="leftSide">
                     <NavLink className="logoNameWrapper" to="/">
                         <div className="logoWrapper">
-                            {!logoLoaded && <div className="logoSkeleton" />}
+                            {!logoLoaded && (
+                                <span
+                                    className="logoLoader"
+                                    role="status"
+                                    aria-label="Loading logo"
+                                >
+                                    <span aria-hidden="true" />
+                                </span>
+                            )}
 
                             <img
                                 src={blackBgLogo}

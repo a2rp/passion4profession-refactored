@@ -1,15 +1,16 @@
 import React from "react";
 import { Styled } from "./styled";
+import ImageWithLoader from "../imageWithLoader";
 
 const BlogHeroImage = ({ slug }) => {
     return (
         <Styled.Figure>
-            <img
+            <ImageWithLoader
                 src={`/images/blog-hero/${slug}.jpg`}
                 alt=""
-                aria-hidden="true"
+                fill
                 fetchPriority="high"
-                decoding="async"
+                loading="eager"
             />
         </Styled.Figure>
     );

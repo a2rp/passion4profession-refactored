@@ -87,7 +87,11 @@ const YouCanDoIt = () => {
                 </div>
 
                 <div className="posterFrame">
-                    {!imageLoaded ? <div className="posterSkeleton" /> : null}
+                    {!imageLoaded ? (
+                        <div className="posterLoader" role="status" aria-label="Loading image">
+                            <span aria-hidden="true" />
+                        </div>
+                    ) : null}
 
                     <img
                         src={imagePath}

@@ -78,16 +78,21 @@ export const Styled = {
                     border-radius: inherit;
                 }
 
-                .logoSkeleton {
+                .logoLoader {
                     position: absolute;
                     inset: 0;
-                    background: linear-gradient(
-                        90deg,
-                        var(--color-surface-2),
-                        var(--color-border),
-                        var(--color-surface-2)
-                    );
-                    opacity: 0.6;
+                    display: grid;
+                    place-items: center;
+                    background: var(--color-surface-2);
+
+                    span {
+                        width: 20px;
+                        height: 20px;
+                        border: 2px solid var(--color-border);
+                        border-top-color: var(--color-primary);
+                        border-radius: 50%;
+                        animation: logo-spin 750ms linear infinite;
+                    }
                 }
             }
 
@@ -203,6 +208,12 @@ export const Styled = {
 
             &:active .thumb {
                 box-shadow: 0 0 0 3px var(--color-selection-bg);
+            }
+        }
+
+        @keyframes logo-spin {
+            to {
+                transform: rotate(360deg);
             }
         }
 

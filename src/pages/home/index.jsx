@@ -8,6 +8,7 @@ import {
     FiSearch,
 } from "react-icons/fi";
 import { archivePosts } from "../../lib/archivePosts";
+import ImageWithLoader from "../../components/imageWithLoader";
 import { Styled } from "./styled";
 
 const PAGE_SIZE = 4;
@@ -206,9 +207,10 @@ const Home = () => {
                             to={featuredPost.path}
                             aria-label={`Read ${featuredPost.title}`}
                         >
-                            <img
+                            <ImageWithLoader
                                 src={`/images/blog-hero/${featuredPost.slug}.jpg`}
                                 alt=""
+                                fill
                                 loading="eager"
                             />
                             <span className="imageLabel">Featured article</span>
@@ -235,9 +237,10 @@ const Home = () => {
                                         to={post.path}
                                         aria-label={`Read ${post.title}`}
                                     >
-                                        <img
+                                        <ImageWithLoader
                                             src={`/images/blog-hero/${post.slug}.jpg`}
                                             alt=""
+                                            fill
                                             loading="lazy"
                                         />
                                     </Link>

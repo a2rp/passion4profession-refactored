@@ -1,4 +1,5 @@
 import React from "react";
+import ImageWithLoader from "../../components/imageWithLoader";
 import {
     FiGlobe,
     FiClock,
@@ -78,7 +79,7 @@ const SixOrSevenContinentsOnEarth = () => {
             </Styled.HeroCard>
 
             <Styled.SectionCard>
-                <img src={image} alt="" />
+                <ImageWithLoader src={image} alt="" />
             </Styled.SectionCard>
 
             <Styled.SectionCard>

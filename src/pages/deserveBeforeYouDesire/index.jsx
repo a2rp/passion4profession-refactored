@@ -1,4 +1,5 @@
 import React from "react";
+import ImageWithLoader from "../../components/imageWithLoader";
 import {
     FiArchive,
     FiClock,
@@ -72,7 +73,7 @@ const DeserveBeforeYouDesire = () => {
             </Styled.HeroCard>
 
             <Styled.SectionCard className="imageWrapper">
-                <img src={image} alt="" />
+                <ImageWithLoader src={image} alt="" />
             </Styled.SectionCard>
 
             <Styled.SectionCard>

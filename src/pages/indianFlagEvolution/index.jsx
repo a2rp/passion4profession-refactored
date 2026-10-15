@@ -1,4 +1,5 @@
 import React from "react";
+import ImageWithLoader from "../../components/imageWithLoader";
 import {
     FiFlag,
     FiClock,
@@ -172,7 +173,7 @@ const IndianFlagEvolution = () => {
                     <h2>Timeline of evolution</h2>
                 </div>
 
-                <img src={image} alt="" />
+                <ImageWithLoader src={image} alt="" />
 
                 <div className="timeline">
                     {evolutionItems.map((item) => (
@@ -209,7 +210,7 @@ const IndianFlagEvolution = () => {
                         <div className="chakra" />
                     </div>
                     <div className="stripe green" /> */}
-                    <img src={flag} alt="" />
+                    <ImageWithLoader src={flag} alt="" />
                 </div>
 
                 <p>

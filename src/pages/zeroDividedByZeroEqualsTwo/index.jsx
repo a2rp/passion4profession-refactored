@@ -1,4 +1,5 @@
 import React from "react";
+import ImageWithLoader from "../../components/imageWithLoader";
 import {
     FiAlertCircle,
     FiBookOpen,
@@ -73,7 +74,7 @@ const ZeroDividedByZeroEqualsTwo = () => {
                 </p>
 
                 <div className="imageWrapper">
-                    <img
+                    <ImageWithLoader
                         src={originalPostImage}
                         alt="Original handwritten blog post claiming that 0 divided by 0 equals 2"
                         loading="lazy"
