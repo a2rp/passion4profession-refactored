@@ -188,26 +188,6 @@ const Home = () => {
                     </div>
                 </label>
 
-                <label className="selectField pageSizeField">
-                    <span>Show</span>
-                    <div className="selectControl">
-                        <select
-                            value={pageSize}
-                            onChange={(event) => {
-                                setPageSize(event.target.value);
-                                setPage(1);
-                            }}
-                            aria-label="Articles per page"
-                        >
-                            {PAGE_SIZE_OPTIONS.map((option) => (
-                                <option key={option} value={option}>
-                                    {option === "all" ? "All" : option}
-                                </option>
-                            ))}
-                        </select>
-                        <FiChevronDown className="selectChevron" aria-hidden="true" />
-                    </div>
-                </label>
             </section>
 
             <div className="resultsHeader">
@@ -296,7 +276,7 @@ const Home = () => {
                 </div>
             )}
 
-            {filteredPosts.length > postsPerPage ? (
+            {filteredPosts.length > 0 ? (
                 <nav className="pagination" aria-label="Archive pages">
                     <button
                         type="button"
@@ -329,6 +309,26 @@ const Home = () => {
                     >
                         <span>Next</span> <FiArrowRight />
                     </button>
+
+                    <div className="pageSizeControl" role="group" aria-label="Articles per page">
+                        <span className="pageSizeLabel">Show</span>
+                        <div className="pageSizeOptions">
+                            {PAGE_SIZE_OPTIONS.map((option) => (
+                                <button
+                                    type="button"
+                                    key={option}
+                                    className={pageSize === option ? "current" : ""}
+                                    aria-pressed={pageSize === option}
+                                    onClick={() => {
+                                        setPageSize(option);
+                                        setPage(1);
+                                    }}
+                                >
+                                    {option === "all" ? "All" : option}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
                 </nav>
             ) : null}
         </Styled.Wrapper>

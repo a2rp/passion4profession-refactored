@@ -72,7 +72,7 @@ export const Styled = {
             display: grid;
             grid-template-columns:
                 minmax(220px, 1fr)
-                repeat(3, minmax(135px, 190px));
+                repeat(2, minmax(150px, 220px));
             gap: 12px;
             padding: 14px;
             margin-bottom: 34px;
@@ -374,12 +374,14 @@ export const Styled = {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-top: 32px;
         }
 
         .pageArrow,
-        .pageNumbers button {
+        .pageNumbers button,
+        .pageSizeOptions button {
             min-width: 38px;
             height: 38px;
             display: inline-flex;
@@ -415,9 +417,37 @@ export const Styled = {
             color: var(--color-text-inverse);
         }
 
+        .pageSizeControl {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-left: 8px;
+            padding-left: 16px;
+            border-left: 1px solid var(--color-border);
+        }
+
+        .pageSizeLabel {
+            color: var(--color-text-muted);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .pageSizeOptions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .pageSizeOptions button.current {
+            border-color: var(--color-text-primary);
+            background: var(--color-text-primary);
+            color: var(--color-text-inverse);
+        }
+
         @media (max-width: 900px) {
             .toolbar {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .searchField {
@@ -507,6 +537,14 @@ export const Styled = {
 
             .pagination {
                 gap: 7px;
+            }
+
+            .pageSizeControl {
+                flex-basis: 100%;
+                justify-content: center;
+                margin: 8px 0 0;
+                padding: 0;
+                border: 0;
             }
 
             .pageArrow {
