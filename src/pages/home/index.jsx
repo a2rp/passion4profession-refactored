@@ -11,7 +11,7 @@ import { archivePosts } from "../../lib/archivePosts";
 import ImageWithLoader from "../../components/imageWithLoader";
 import { Styled } from "./styled";
 
-const PAGE_SIZE = 4;
+const PAGE_SIZE_OPTIONS = ["5", "15", "30", "50", "all"];
 
 const getCategory = ({ title, path }) => {
     const value = `${title} ${path}`.toLowerCase();
@@ -67,6 +67,7 @@ const Home = () => {
     const [search, setSearch] = useState("");
     const [category, setCategory] = useState("All topics");
     const [sort, setSort] = useState("archive");
+    const [pageSize, setPageSize] = useState("5");
     const [page, setPage] = useState(1);
 
     const filteredPosts = useMemo(() => {
@@ -94,14 +95,19 @@ const Home = () => {
         return result;
     }, [category, search, sort]);
 
-    const pageCount = Math.max(1, Math.ceil(filteredPosts.length / PAGE_SIZE));
+    const postsPerPage =
+        pageSize === "all" ? Math.max(1, filteredPosts.length) : Number(pageSize);
+    const pageCount = Math.max(
+        1,
+        Math.ceil(filteredPosts.length / postsPerPage),
+    );
     const safePage = Math.min(page, pageCount);
-    const pageStart = (safePage - 1) * PAGE_SIZE;
-    const pagePosts = filteredPosts.slice(pageStart, pageStart + PAGE_SIZE);
+    const pageStart = (safePage - 1) * postsPerPage;
+    const pagePosts = filteredPosts.slice(pageStart, pageStart + postsPerPage);
     const featuredPost = pagePosts[0];
     const cardPosts = pagePosts.slice(1);
     const firstResult = filteredPosts.length ? pageStart + 1 : 0;
-    const lastResult = Math.min(pageStart + PAGE_SIZE, filteredPosts.length);
+    const lastResult = Math.min(pageStart + postsPerPage, filteredPosts.length);
     const pageNumbers = Array.from({ length: pageCount }, (_, index) => index + 1);
 
     const resetFilters = () => {
@@ -177,6 +183,27 @@ const Home = () => {
                             <option value="archive">Archive order</option>
                             <option value="title-asc">Title: A to Z</option>
                             <option value="title-desc">Title: Z to A</option>
+                        </select>
+                        <FiChevronDown className="selectChevron" aria-hidden="true" />
+                    </div>
+                </label>
+
+                <label className="selectField pageSizeField">
+                    <span>Show</span>
+                    <div className="selectControl">
+                        <select
+                            value={pageSize}
+                            onChange={(event) => {
+                                setPageSize(event.target.value);
+                                setPage(1);
+                            }}
+                            aria-label="Articles per page"
+                        >
+                            {PAGE_SIZE_OPTIONS.map((option) => (
+                                <option key={option} value={option}>
+                                    {option === "all" ? "All" : option}
+                                </option>
+                            ))}
                         </select>
                         <FiChevronDown className="selectChevron" aria-hidden="true" />
                     </div>
@@ -269,7 +296,7 @@ const Home = () => {
                 </div>
             )}
 
-            {filteredPosts.length > PAGE_SIZE ? (
+            {filteredPosts.length > postsPerPage ? (
                 <nav className="pagination" aria-label="Archive pages">
                     <button
                         type="button"

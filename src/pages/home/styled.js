@@ -70,7 +70,9 @@ export const Styled = {
 
         .toolbar {
             display: grid;
-            grid-template-columns: minmax(220px, 1fr) minmax(150px, 220px) minmax(160px, 220px);
+            grid-template-columns:
+                minmax(220px, 1fr)
+                repeat(3, minmax(135px, 190px));
             gap: 12px;
             padding: 14px;
             margin-bottom: 34px;
@@ -414,6 +416,14 @@ export const Styled = {
         }
 
         @media (max-width: 900px) {
+            .toolbar {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .searchField {
+                grid-column: 1 / -1;
+            }
+
             .postGrid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
